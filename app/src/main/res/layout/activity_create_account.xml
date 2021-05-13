@@ -4,90 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <EditText
-        android:id="@+id/et_first_name"
-        style="@style/viewCustom"
-        android:ems="10"
-        android:hint="@string/first_name"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/et_last_name"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_first_name"
-        android:ems="10"
-        android:hint="@string/last_name"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/et_email"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_last_name"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"/>
-
-    <EditText
-        android:id="@+id/et_password"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_email"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/et_height"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_password"
-        android:ems="10"
-        android:hint="@string/height" />
-
-    <EditText
-        android:id="@+id/et_weight"
-        style="@style/viewCustom"
-        android:layout_below="@id/et_height"
-        android:ems="10"
-        android:hint="@string/weight" />
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/viewCustom"
-        android:ems="10"
-        android:layout_below="@id/et_weight"
-        android:text="Gender"
-        android:textSize="20dp"/>
-
-    <RadioGroup
-        style="@style/viewCustom"
-        android:layout_below="@+id/textView"
-        android:id="@+id/et_radioGroup"
-        android:orientation="vertical">
-
-        <RadioButton
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/personalinfo"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/rv1_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="► Personal Info"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/et_first_name"
             style="@style/viewCustom"
-            android:text="Male"
-            android:id="@+id/radioButton1"
-            android:checked="false"/>
+            android:layout_below="@+id/rv1_heading"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/et_gender"
+            android:layout_below="@+id/et_first_name"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="text" />
 
-        <RadioButton
+        <EditText
+            android:id="@+id/et_gender"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_first_name"
+            android:ems="10"
+            android:hint="Gender"
+            android:inputType="text" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_below="@+id/personalinfo">
+
+        <TextView
+            android:id="@+id/rv2_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="► LogIn Info"/>
+
+        <EditText
+            android:id="@+id/et_email"
             style="@style/viewCustom"
-            android:text="Female"
-            android:id="@+id/radioButton2"
-            android:checked="false"/>
-    </RadioGroup>
+            android:layout_below="@id/rv2_heading"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/viewCustom"
+            android:layout_below="@id/et_email"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/health_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_below="@+id/login_info">
+
+        <TextView
+            android:id="@+id/rv3_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="► Health Info"/>
+
+        <EditText
+            android:id="@+id/et_height"
+            style="@style/viewCustom"
+            android:layout_below="@id/rv3_heading"
+            android:ems="10"
+            android:hint="@string/height" />
+
+        <EditText
+            android:id="@+id/et_weight"
+            style="@style/viewCustom"
+            android:layout_below="@id/et_height"
+            android:ems="10"
+            android:hint="@string/weight" />
+
+    </RelativeLayout>
 
 
     <Button
         android:id="@+id/btn_register"
         style="@style/viewCustom"
-        android:layout_below="@id/et_radioGroup"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="225dp"
         android:background="@color/black"
         android:text="@string/create_act"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
-
 
     `
 

@@ -14,13 +14,13 @@ import com.google.firebase.database.FirebaseDatabase
 
 class CreateAccountActivity : AppCompatActivity() {
     //UI elements
-    private var etFirstName: EditText? = null
-    private var etLastName: EditText? = null
+    private var etName: EditText? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
     private var etHeight: EditText? = null
     private var etWeight: EditText? = null
-    private var etGender: RadioGroup? = null
+    private var etGender: EditText? = null
+    private var etAge: EditText? = null
     private var btnCreateAccount: Button? = null
     private var mProgressBar: ProgressDialog? = null
     //Firebase references
@@ -29,13 +29,13 @@ class CreateAccountActivity : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
     private val TAG = "CreateAccountActivity"
     //global variables
-    private var firstName: String? = null
-    private var lastName: String? = null
+    private var name: String? = null
     private var email: String? = null
     private var password: String? = null
     private var height: String? = null
     private var weight: String? = null
     private var gender: String? = null
+    private var age: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
@@ -45,15 +45,13 @@ class CreateAccountActivity : AppCompatActivity() {
 
     private fun initialise() {
 
-        etFirstName = findViewById<View>(R.id.et_first_name) as EditText
-        etLastName = findViewById<View>(R.id.et_last_name) as EditText
+        etName = findViewById<View>(R.id.et_first_name) as EditText
         etEmail = findViewById<View>(R.id.et_email) as EditText
         etPassword = findViewById<View>(R.id.et_password) as EditText
         etHeight = findViewById<View>(R.id.et_height)  as EditText
         etWeight = findViewById<View>(R.id.et_weight)  as EditText
-        //var selectedRadioButton  = (RadioButton)findViewById(etGender.getCheckedRadioButtonId());
-        //val radio: RadioButton = findViewById(checkedId)
-        etGender = findViewById<View>(R.id.et_radioGroup) as RadioGroup
+        etGender = findViewById<View>(R.id.et_gender)  as EditText
+        etAge = findViewById<View>(R.id.et_age) as EditText
         btnCreateAccount = findViewById<View>(R.id.btn_register) as Button
         mProgressBar = ProgressDialog(this)
 
@@ -64,17 +62,16 @@ class CreateAccountActivity : AppCompatActivity() {
         btnCreateAccount!!.setOnClickListener { createNewAccount() }
     }
     private fun createNewAccount() {
-        firstName = etFirstName?.text.toString()
-        lastName = etLastName?.text.toString()
+        name = etName?.text.toString()
         email = etEmail?.text.toString()
         password = etPassword?.text.toString()
         height = etHeight?.text.toString()
         weight = etWeight?.text.toString()
-        val selectButton = etGender!!.checkedRadioButtonId
-        var radiobutton = findViewById<RadioButton>(selectButton)
-        gender = radiobutton.text as String?
-        if (!TextUtils.isEmpty(firstName) && !TextUtils.isEmpty(lastName)
-            && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
+        gender = etGender?.text.toString()
+        age = etAge?.text.toString()
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)
+            && !TextUtils.isEmpty(height) && !TextUtils.isEmpty(weight) && !TextUtils.isEmpty(gender)
+            && gender.equals("Male")||gender.equals("Female") && !TextUtils.isEmpty(age)) {
             mProgressBar!!.setMessage("Registering User...")
             mProgressBar!!.show()
         } else {
@@ -96,8 +93,8 @@ class CreateAccountActivity : AppCompatActivity() {
 
                     //update user profile information
                     val currentUserDb = mDatabaseReference!!.child(userId)
-                    currentUserDb.child("firstName").setValue(firstName)
-                    currentUserDb.child("lastName").setValue(lastName)
+                    currentUserDb.child("name").setValue(name)
+                    currentUserDb.child("age").setValue(age)
                     currentUserDb.child("height").setValue(height)
                     currentUserDb.child("weight").setValue(weight)
                     currentUserDb.child("gender").setValue(gender)
