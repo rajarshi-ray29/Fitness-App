@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".EditInfoActivity"/>
+        <activity android:name=".StoreActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".ForgotPasswordActivity"/>

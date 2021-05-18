@@ -12,4 +12,9 @@
     <string name="height">Height(cm)</string>
     <string name="weight">Weight(kg)</string>
     <string name="sign_up">Sign Up</string>
+
+    <string name="item1">Apple</string>
+    <string name="item2">Milkshake</string>
+    <string name="item3">Energy Drink</string>
+    <string name="item4">Proteins</string>
 </resources>
