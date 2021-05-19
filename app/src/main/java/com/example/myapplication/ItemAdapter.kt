@@ -9,28 +9,37 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.cos
 
 class ItemAdapter(
     private val context: Context,
-    private val dataset:List<Store>
+    private val dataset:List<Store>,
+    private val listener: OnItemClickListener
 )
     : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val textView: TextView = view.findViewById(R.id.item_title)
-        val imageView: ImageView=view.findViewById(R.id.item_image)
-        private val buttonView: Button=view.findViewById(R.id.add_to_cart)
+    inner class ItemViewHolder( itemView: View): RecyclerView.ViewHolder(itemView),
+    View.OnClickListener{
+        val textView: TextView = itemView.findViewById(R.id.item_title)
+        val imageView: ImageView=itemView.findViewById(R.id.item_image)
+        val costView: TextView = itemView.findViewById(R.id.item_cost)
+        val buttonView: Button=itemView.findViewById(R.id.add_to_cart)
         init {
-            buttonView.setOnClickListener {v: View ->
-                val position: Int = adapterPosition
-                Toast.makeText(view.context, "Hello world", Toast.LENGTH_SHORT).show()
-                //val total: TextView?= StoreActivity().findViewById<TextView>(R.id.total)
-                //total?.text = "20"
-                //val view: TextView = StoreActivity().findViewById(R.id.total)
-                //view.text = "40"
-                StoreActivity().total!!.text  = "50"
+            buttonView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position!= RecyclerView.NO_POSITION) {
+                val item = dataset[position]
+                val cost = item.costResourceId.toFloat()
+                listener.onItemCLick(position, cost)
             }
         }
+    }
+
+    interface OnItemClickListener{
+        fun onItemCLick(position: Int, cost: Float)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -43,6 +52,7 @@ class ItemAdapter(
         val item=dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
+        holder.costView.text = item.costResourceId.toString()
     }
 
     override fun getItemCount(): Int {

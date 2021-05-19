@@ -16,6 +16,12 @@
             android:padding="16dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:id="@+id/item_title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:id="@+id/item_cost"/>
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="match_parent"
