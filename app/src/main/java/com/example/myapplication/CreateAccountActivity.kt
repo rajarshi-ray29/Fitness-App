@@ -129,9 +129,20 @@ class CreateAccountActivity : AppCompatActivity() {
     }
     private fun updateUserInfoAndUI(){
         //start next activity
-        val intent = Intent(this, LoginActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
+
+        if(ownerInterface().flag==1)
+        {
+            val intent = Intent(this, ownerInterface::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            ownerInterface().flag=0
+
+        }
+        else {
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
 
     }
 }
