@@ -22,10 +22,6 @@
             android:layout_height="match_parent">
 
 
-
-
-
-
             <TableRow>
                 <TextView
                     android:id="@+id/textView1"
@@ -39,8 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
-                android:text="TextView" />
+                android:textSize="20sp"/>
             </TableRow>
 
 
@@ -61,35 +56,25 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
 
-
-
-
-
             </TableRow>
 
-
-
-
-
             <TableRow>
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Age:"
-            android:textSize="20sp"
-            />
 
-        <TextView
-            android:id="@+id/age"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="20sp"
-             />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age:"
+                    android:textSize="20sp" />
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"/>
+
+            </TableRow>
 
         </TableLayout>
 
