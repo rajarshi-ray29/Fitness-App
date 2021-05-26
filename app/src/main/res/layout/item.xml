@@ -25,7 +25,8 @@
             android:text="First name: "
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/name"
@@ -43,7 +44,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:text="Gender:"
             android:textStyle="bold"
@@ -66,7 +67,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="Age"
