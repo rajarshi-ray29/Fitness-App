@@ -33,7 +33,7 @@
             android:layout_height="128dp"
             android:layout_margin="10dp"
             android:text="ALL CUSTOMERS"
-            android:textSize="17dp" />
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/btn_add_customer"
@@ -42,7 +42,7 @@
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/btn_Allcustomers"
             android:text="ADD CUSTOMER"
-            android:textSize="17dp" />
+            android:textSize="15dp" />
 
 
     </RelativeLayout>

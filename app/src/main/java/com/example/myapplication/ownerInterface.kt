@@ -24,11 +24,9 @@ class ownerInterface : AppCompatActivity() {
                 OwnerActivity::class.java)
             ) }
 
-        btn_addcustomer!!.setOnClickListener {
-
-            startActivity(Intent(this,
-            CreateAccountActivity::class.java))
-
+        btn_addcustomer!!.setOnClickListener { startActivity(Intent(this,
+            CreateAccountActivity::class.java)
+        )
         }
 
 

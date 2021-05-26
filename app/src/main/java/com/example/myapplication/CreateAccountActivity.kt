@@ -130,9 +130,9 @@ class CreateAccountActivity : AppCompatActivity() {
 
     }
     private fun updateUserInfoAndUI(){
-        //start next activity
+        //We tried to change activity based on the owner and users input but it did not work :(
 
-        if(flag==1)
+        /*if(flag==1)
         {
             flag=0
             val intent = Intent(this, ownerInterface::class.java)
@@ -144,7 +144,11 @@ class CreateAccountActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-        }
+        }*/
+
+        val intent = Intent(this, StartScreen::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
 
     }
 }
