@@ -8,6 +8,8 @@ import android.widget.Button
 
 class ownerInterface : AppCompatActivity() {
 
+    public var flag=0
+
 
 
     private var btn_allcustomers: Button?=null
@@ -26,7 +28,10 @@ class ownerInterface : AppCompatActivity() {
 
         btn_addcustomer!!.setOnClickListener { startActivity(Intent(this,
             CreateAccountActivity::class.java)
-        ) }
+        )
+            flag=1
+        }
+
 
 
 
