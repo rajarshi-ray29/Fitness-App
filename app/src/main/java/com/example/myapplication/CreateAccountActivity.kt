@@ -14,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase
 
 class CreateAccountActivity : AppCompatActivity() {
     //UI elements
+
+    var flag=0
     private var etName: EditText? = null
     private var etEmail: EditText? = null
     private var etPassword: EditText? = null
@@ -130,12 +132,12 @@ class CreateAccountActivity : AppCompatActivity() {
     private fun updateUserInfoAndUI(){
         //start next activity
 
-        if(ownerInterface().flag==1)
+        if(flag==1)
         {
+            flag=0
             val intent = Intent(this, ownerInterface::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-            ownerInterface().flag=0
 
         }
         else {

@@ -8,14 +8,12 @@ import android.widget.Button
 
 class ownerInterface : AppCompatActivity() {
 
-    public var flag=0
-
-
 
     private var btn_allcustomers: Button?=null
     private var btn_addcustomer: Button?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        CreateAccountActivity().flag=1
         setContentView(R.layout.activity_owner_interface)
 
 
@@ -26,10 +24,11 @@ class ownerInterface : AppCompatActivity() {
                 OwnerActivity::class.java)
             ) }
 
-        btn_addcustomer!!.setOnClickListener { startActivity(Intent(this,
-            CreateAccountActivity::class.java)
-        )
-            flag=1
+        btn_addcustomer!!.setOnClickListener {
+
+            startActivity(Intent(this,
+            CreateAccountActivity::class.java))
+
         }
 
 
