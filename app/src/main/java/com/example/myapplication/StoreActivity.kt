@@ -61,8 +61,9 @@ open class StoreActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener 
         }
         checkout = findViewById(R.id.btn_checkout)
         checkout!!.setOnClickListener{
+            val adresses = arrayOf("rajarshi5675@gmail.com")
             val intent = Intent(Intent.ACTION_SEND)
-            intent.putExtra(Intent.EXTRA_EMAIL,"rajarshi5675@gmail.com")
+            intent.putExtra(Intent.EXTRA_EMAIL,adresses)
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email regarding payment")
             intent.putExtra(Intent.EXTRA_TEXT, "$name has to pay $totalcost amount")
             intent.setType("message/rfc822")

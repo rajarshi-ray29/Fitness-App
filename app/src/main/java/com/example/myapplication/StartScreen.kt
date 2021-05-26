@@ -19,12 +19,14 @@ class StartScreen: AppCompatActivity() {
     private val TAG="StartScreen"
     private var btnLogIn: Button? = null
     private var btnCreateAccount: Button? = null
+    private var btnOwner: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_screen)
         btnLogIn=findViewById<View>(R.id.btn_login) as Button
         btnCreateAccount=findViewById<View>(R.id.btn_createacc) as Button
+        btnOwner=findViewById<View>(R.id.btn_owneractivity) as Button
 
     }
 
@@ -36,6 +38,10 @@ class StartScreen: AppCompatActivity() {
         }
         btnCreateAccount!!.setOnClickListener(){
             val intent = Intent(this, CreateAccountActivity::class.java)
+            startActivity(intent)
+        }
+        btnOwner!!.setOnClickListener(){
+            val intent = Intent(this, OwnerActivity::class.java)
             startActivity(intent)
         }
     }

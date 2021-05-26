@@ -40,4 +40,14 @@
         android:textColor="@color/white"
         android:layout_below="@+id/textView"/>
 
+    <Button
+        android:id="@+id/btn_owneractivity"
+        style="@style/viewCustom"
+        android:layout_below="@+id/btn_createacc"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="238dp"
+        android:text="Click to join as owner"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
 </RelativeLayout>

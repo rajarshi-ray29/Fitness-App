@@ -1,5 +1,8 @@
 package com.example.myapplication
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
@@ -44,16 +47,16 @@ class DietWeb: AppCompatActivity() {
                     bmr = 10*weight.toFloat() + 6.25*height.toFloat() - 5*age.toFloat() -161
                 }
                 val myWebView: WebView = findViewById(R.id.webview)
-                if (bmr<2000) {
+                if (bmr<1200) {
                     myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
                 }
-                else if (2000<=bmr&&bmr<2500){
+                else if (1200<=bmr&&bmr<1500){
                     myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/Muscular_8_eBook.pdf")
                 }
-                else if (2500<=bmi&&bmi<3000){
+                else if (1500<=bmr&&bmr<1800){
                     myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/LEAN_MODE_Nutrition_Plan_MORNING___EVENING_by_Guru_Mann.pdf")
                 }
-                else if (bmi>3000){
+                else if (bmr>1800){
                     myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/Pure_Mass_Nutrition_Plan_by_Guru_Mann_-1.pdf")
                 }
             }
