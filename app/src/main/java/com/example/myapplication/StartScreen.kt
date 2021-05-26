@@ -41,7 +41,7 @@ class StartScreen: AppCompatActivity() {
             startActivity(intent)
         }
         btnOwner!!.setOnClickListener(){
-            val intent = Intent(this, OwnerActivity::class.java)
+            val intent = Intent(this, ownerLogin::class.java)
             startActivity(intent)
         }
     }

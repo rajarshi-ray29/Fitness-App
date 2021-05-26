@@ -34,20 +34,30 @@
     <Button
         android:id="@+id/btn_createacc"
         style="@style/viewCustom"
-        android:text="Create Account"
+        android:layout_below="@+id/textView"
         android:layout_centerInParent="true"
-        android:textSize="24dp"
+        android:layout_marginTop="100dp"
+        android:text="Create Account"
         android:textColor="@color/white"
-        android:layout_below="@+id/textView"/>
+        android:textSize="24dp" />
+    <TextView
+        android:id="@+id/tv_areyouowner"
+        style="@style/viewCustom"
+        android:layout_below="@id/btn_createacc"
+        android:gravity="center_horizontal"
+        android:text="Are you an Owner?"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btn_owneractivity"
         style="@style/viewCustom"
-        android:layout_below="@+id/btn_createacc"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="238dp"
-        android:text="Click to join as owner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_areyouowner"
+        android:layout_marginTop="19dp"
+        android:text="Continue as Owner"
         android:textColor="@color/white"
-        android:textSize="16dp" />
+        android:textSize="14dp" />
 
 </RelativeLayout>
