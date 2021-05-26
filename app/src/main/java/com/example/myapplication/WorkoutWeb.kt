@@ -36,16 +36,16 @@ class WorkoutWeb: AppCompatActivity() {
                 val bmi = weight!!.toFloat()/(height!!.toFloat()* height!!.toFloat()*0.0001)
                 val myWebView: WebView = findViewById(R.id.webview)
                 if (bmi<18.5) {
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/MASS-UP_eBook-1.pdf")
                 }
                 else if (18.5<=bmi&&bmi<22){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/MUSCLE_SIZE_5x5_-_WORKOUT_PLAN.pdf")
                 }
                 else if (22<=bmi&&bmi<25){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/LEAN_MODE_Workout_Plan_by_Guru_Mann.pdf")
                 }
                 else if (bmi>25){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/GET_RIPPED_Workout_Plan_by_Guru_Mann.pdf")
                 }
             }
 

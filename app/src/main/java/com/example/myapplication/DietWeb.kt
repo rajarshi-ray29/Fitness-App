@@ -33,19 +33,28 @@ class DietWeb: AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var weight = snapshot.child("weight").value as String
                 var height = snapshot.child("height").value as String
+                var gender = snapshot.child("gender").value as String
+                var age = snapshot.child("age").value as String
                 val bmi = weight!!.toFloat()/(height!!.toFloat()* height!!.toFloat()*0.0001)
+                var bmr: Double
+                if(gender.equals("Male")){
+                    bmr = 10*weight.toFloat() + 6.25*height.toFloat() - 5*age.toFloat() +5
+                }
+                else{
+                    bmr = 10*weight.toFloat() + 6.25*height.toFloat() - 5*age.toFloat() -161
+                }
                 val myWebView: WebView = findViewById(R.id.webview)
-                if (bmi<18.5) {
+                if (bmr<2000) {
                     myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
                 }
-                else if (18.5<=bmi&&bmi<22){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                else if (2000<=bmr&&bmr<2500){
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/Muscular_8_eBook.pdf")
                 }
-                else if (22<=bmi&&bmi<25){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                else if (2500<=bmi&&bmi<3000){
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/LEAN_MODE_Nutrition_Plan_MORNING___EVENING_by_Guru_Mann.pdf")
                 }
-                else if (bmi>25){
-                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/e_Book-1-1.pdf")
+                else if (bmi>3000){
+                    myWebView.loadUrl("https://docs.google.com/gview?embedded=true&url=https://www.gurumannnutrition.com/wp-content/uploads/2018/06/Pure_Mass_Nutrition_Plan_by_Guru_Mann_-1.pdf")
                 }
             }
 
