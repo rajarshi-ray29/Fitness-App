@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
 
-            mProgressBar!!.setMessage("Registering User...")
+            mProgressBar!!.setMessage("Logging in user...")
             mProgressBar!!.show()
 
             Log.d(TAG, "Logging in user.")

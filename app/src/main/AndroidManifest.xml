@@ -10,6 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".DietPlanActivity"/>
+        <activity android:name=".WorkoutWeb"/>
+        <activity android:name=".DietWeb"/>
+        <activity android:name=".WorkoutPlanActivity"/>
         <activity android:name=".EditInfoActivity"/>
         <activity android:name=".StoreActivity"/>
         <activity android:name=".MainActivity"/>

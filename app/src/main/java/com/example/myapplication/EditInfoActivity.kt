@@ -5,12 +5,10 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -35,6 +33,7 @@ class EditInfoActivity : AppCompatActivity() {
     private var tvAge: TextView? = null
     private var btnUpdate: Button?=null
     private var btnSignOut:Button?=null
+    private var btnImage: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +56,7 @@ class EditInfoActivity : AppCompatActivity() {
         tvAge = findViewById<View>(R.id.tv_age) as TextView
         btnUpdate = findViewById<View>(R.id.btn_update) as Button
         btnSignOut = findViewById<View>(R.id.et_signout) as Button
+        btnImage = findViewById<View>(R.id.ib_profile_pic) as ImageView
         mProgressBar = ProgressDialog(this)
     }
 
@@ -73,9 +73,15 @@ class EditInfoActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 tvName!!.text = snapshot.child("name").value as String
                 tvAge!!.text = snapshot.child("age").value as String
-                tvHeight!!.text = snapshot.child("height").value as String
-                tvWeight!!.text = snapshot.child("weight").value as String
+                tvHeight!!.text ="${snapshot.child("height").value as String} cm"
+                tvWeight!!.text = "${snapshot.child("weight").value as String} kg"
                 tvGender!!.text = snapshot.child("gender").value as String
+                if(tvGender!!.text.equals("Male")){
+                    btnImage!!.setImageResource(R.drawable.iv_profilepic_male)
+                }
+                else if(tvGender!!.text.equals("Female")){
+                    btnImage!!.setImageResource(R.drawable.iv_profilepic_female)
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
@@ -102,8 +108,8 @@ class EditInfoActivity : AppCompatActivity() {
 
         etName.setText(tvName!!.text.toString())
         etAge.setText(tvAge!!.text.toString())
-        etHeight.setText(tvHeight!!.text.toString())
-        etWeight.setText(tvWeight!!.text.toString())
+        etHeight.setText(tvHeight!!.text.toString().substring(0,tvHeight!!.text.toString().indexOf(' ')))
+        etWeight.setText(tvWeight!!.text.toString().substring(0,tvWeight!!.text.toString().indexOf(' ')))
 
         builder.setTitle("Edit Info:")
         builder.setView(view)

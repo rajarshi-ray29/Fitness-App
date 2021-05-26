@@ -53,6 +53,12 @@ class HomeActivity: AppCompatActivity() {
         btnStore!!.setOnClickListener {
             startActivity(Intent(this, StoreActivity::class.java))
         }
+        btnWorkout!!.setOnClickListener {
+            startActivity(Intent(this, WorkoutPlanActivity::class.java))
+        }
+        btnDiet!!.setOnClickListener {
+            startActivity(Intent(this, DietPlanActivity::class.java))
+        }
     }
 
     override fun onStart() {

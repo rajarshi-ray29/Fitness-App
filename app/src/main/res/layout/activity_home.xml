@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_username"
-        android:padding="16dp">
+        android:layout_marginTop="47dp">
 
         <Button
             android:id="@+id/btn_workoutplan"
@@ -46,8 +46,8 @@
             android:id="@+id/btn_supplement_store"
             android:layout_width="160dp"
             android:layout_height="128dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/btn_workoutplan"
+            android:layout_margin="10dp"
             android:text="Supplement Store"
             android:textSize="16dp" />
 
@@ -55,8 +55,8 @@
             android:id="@+id/btn_edit_info"
             android:layout_width="160dp"
             android:layout_height="128dp"
-            android:layout_margin="10dp"
             android:layout_below="@id/btn_dietplan"
+            android:layout_margin="10dp"
             android:layout_toRightOf="@id/btn_supplement_store"
             android:text="Edit Info"
             android:textSize="20dp" />

@@ -66,7 +66,7 @@ open class StoreActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener 
             intent.putExtra(Intent.EXTRA_SUBJECT, "Email regarding payment")
             intent.putExtra(Intent.EXTRA_TEXT, "$name has to pay $totalcost amount")
             intent.setType("message/rfc822")
-            startActivity(Intent.createChooser(intent, "Send Email using:"));
+            startActivity(Intent.createChooser(intent, "Select email"));
         }
     }
 

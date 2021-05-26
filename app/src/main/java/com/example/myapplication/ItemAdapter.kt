@@ -52,7 +52,7 @@ class ItemAdapter(
         val item=dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
-        holder.costView.text = item.costResourceId.toString()
+        holder.costView.text = "Rs.${item.costResourceId.toString()}"
     }
 
     override fun getItemCount(): Int {

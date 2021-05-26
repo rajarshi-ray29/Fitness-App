@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/iv_body"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="24dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv_username"
+        android:scaleType="centerCrop"/>
+
+    <TableLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_body"
+        android:padding="16dp"
+        android:id="@+id/tl_workout">
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight : "
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="24dp" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height : "
+                android:textSize="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_height"
+                android:layout_marginLeft="20dp"
+                android:textSize="24dp"
+                android:layout_below="@+id/tv_weight"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMI : "
+                android:textSize="24dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_bmi"
+                android:layout_marginLeft="20dp"
+                android:textSize="24dp"
+                android:layout_below="@+id/tv_height"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Body Type : "
+                android:textSize="24dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/body_type"
+                android:layout_marginLeft="20dp"
+                android:textSize="24dp"
+                android:layout_below="@+id/tv_bmi"/>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+
+
+
+
+    <Button
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check your Workout"
+        android:id="@+id/btn_pdf"
+        android:layout_below="@id/tl_workout"/>
+
+</RelativeLayout>
