@@ -9,3 +9,12 @@ This app aims to provide users with customised workout and diet plans based on t
 This app also implements an owner interface where the owner of the gym can easily manage and add customers.
 We strive to provide a better connection between gym owners and app users by providing a intuitive and interactive interface.
 This app aims to make you fit.
+
+Team:
+Harsh Tyagi
+Rajarshi Ray
+Rahul M
+
+PS: The credentials to acess owner activity is:
+  Username: admin
+  Password: admin
